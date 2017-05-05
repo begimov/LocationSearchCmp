@@ -1,6 +1,9 @@
 var map;
 
 function initMap() {
+
+  var autocomplete;
+
   map = new google.maps.Map(document.getElementById('map'), {
     center: {
       lat: 59.9212708,
@@ -8,4 +11,8 @@ function initMap() {
     },
     zoom: 8
   });
+
+  autocomplete = new google.maps.places.Autocomplete(document.getElementById('search-autocomplete'));
+  autocomplete.bindTo('bounds', map);
+
 }
